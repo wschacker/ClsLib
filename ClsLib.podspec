@@ -90,6 +90,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
+  s.default_subspec = 'Category'
   s.subspec 'Category' do |category|
     category.source_files = 'Category/*.{h,m}'
   end
