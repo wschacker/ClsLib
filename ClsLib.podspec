@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ClsLib.podspec"
+  s.name         = "ClsLib"
   s.version      = "0.0.1"
-  s.summary      = "A short description of ClsLib.podspec."
+  s.summary      = "A short description of ClsLib"
 
   s.description  = <<-DESC
                    A longer description of ClsLib.podspec in Markdown format.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "http://EXAMPLE/ClsLib.podspec"
+  s.homepage     = "http://EXAMPLE/ClsLib"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
