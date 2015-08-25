@@ -95,9 +95,9 @@ Pod::Spec.new do |s|
     category.source_files = 'Category/*.{h,m}'
   end
 
-  s.subspec 'Util' do |util|
-    util.source_files = 'Util/**/*.{h,m}'
-  end
+  # s.subspec 'Util' do |util|
+  #   util.source_files = 'Util/**/*.{h,m}'
+  # end
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -138,6 +138,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'AFNetworking', '~> 2.6.0'
+  # s.dependency 'AFNetworking', '~> 2.6.0'
 
 end
