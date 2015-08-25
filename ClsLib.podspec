@@ -96,8 +96,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Util' do |util|
-    util.source_files = 'Util/**/*.{h,m}'
-    util.dependency 'AFNetworking', '~> 2.6.0'
+    util.subspec 'HttpUtil' do |httpUtil|
+    httpUtil.source_files = 'Util/HttpUtil/*.{h,m}'
+    httpUtil.dependency 'AFNetworking', '~> 2.6.0'
+    end
+    util.subspec 'BaseClass' do |baseClass|
+    baseClass.source_files = 'Util/BaseClass/*.{h,m}'
+    end
   end
 
   # s.public_header_files = "Classes/**/*.h"
