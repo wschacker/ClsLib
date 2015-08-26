@@ -50,9 +50,9 @@
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:parmDic];
 
-        [manager POST:strUrl parameters:parameters timeoutInterval:10 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager POST:strUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             dispatch_async(dispatch_get_main_queue(),^{
-
+                
                 okBlock(responseObject);});
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
