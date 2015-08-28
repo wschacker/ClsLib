@@ -85,8 +85,9 @@
 }
 
 +(BOOL)createPlistFile:(NSString *)strFileName{
-    
-    NSString *filePath = [ResourceManager filePathWithName:strFileName];
+    NSString *path=[ResourceManager appDocumentsDirectory];
+    NSString *fileName = [NSString stringWithFormat:@"%@.plist",strFileName];
+    NSString *filePath=[path stringByAppendingPathComponent:fileName];
     NSFileManager* fm = [NSFileManager defaultManager];
     if ([ResourceManager isExist:filePath]) {
         NSError *err;
