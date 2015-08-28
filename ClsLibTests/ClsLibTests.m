@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "ResourceManager.h"
 
 @interface ClsLibTests : XCTestCase
 
@@ -34,6 +35,8 @@
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
+        NSDictionary *dic = PropertyList(@"files/appConfig.plist");
+        NSLog(@"dic ->%@",dic);
     }];
 }
 

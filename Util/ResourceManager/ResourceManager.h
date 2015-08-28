@@ -17,6 +17,17 @@ CG_INLINE UIImage * UIResourceBundleImage(NSString *strPath){
     return [UIImage imageNamed:[NSString stringWithFormat:@"default.bundle/image/%@.png",strPath]];
 }
 
+CG_INLINE NSDictionary *PropertyList(NSString *strPath){
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
+    
+    // Obtain a reference to a loadable bundle.
+    
+    NSString *resultPath = [myBundle pathForResource:strPath ofType:nil];
+    NSDictionary *dictionary=[[NSDictionary alloc]initWithContentsOfFile:resultPath];
+    return dictionary;
+}
+
 @interface ResourceManager : NSObject
 
 +(NSString *)appDocumentsDirectory;

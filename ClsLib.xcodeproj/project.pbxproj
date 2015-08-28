@@ -90,6 +90,7 @@
 		A7EF88881B8EE1D800909D18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EF88871B8EE1D800909D18 /* Foundation.framework */; };
 		A7EF888B1B8EE2DF00909D18 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A7EF88891B8EE2DF00909D18 /* ResourceManager.h */; };
 		A7EF888C1B8EE2DF00909D18 /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EF888A1B8EE2DF00909D18 /* ResourceManager.m */; };
+		A7EF88961B8EEB6D00909D18 /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A7EF88951B8EEB6D00909D18 /* default.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		A7EF88871B8EE1D800909D18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7EF88891B8EE2DF00909D18 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceManager.h; path = Util/ResourceManager/ResourceManager.h; sourceTree = "<group>"; };
 		A7EF888A1B8EE2DF00909D18 /* ResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceManager.m; path = Util/ResourceManager/ResourceManager.m; sourceTree = "<group>"; };
+		A7EF88951B8EEB6D00909D18 /* default.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = default.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		A753B2341B8C103B001EBA5E = {
 			isa = PBXGroup;
 			children = (
+				A7EF88951B8EEB6D00909D18 /* default.bundle */,
 				A7EF88871B8EE1D800909D18 /* Foundation.framework */,
 				A753B2E51B8C1D18001EBA5E /* Util */,
 				A753B25A1B8C114F001EBA5E /* Category */,
@@ -530,6 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EF88961B8EEB6D00909D18 /* default.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

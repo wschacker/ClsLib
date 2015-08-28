@@ -103,6 +103,9 @@ Pod::Spec.new do |s|
     util.subspec 'BaseClass' do |baseClass|
     baseClass.source_files = 'Util/BaseClass/*.{h,m}'
     end
+    util.subspec 'ResourceManager' do |resourceManager|
+    baseClass.source_files = 'Util/ResourceManager/*.{h,m}'
+    end    
   end
 
   # s.public_header_files = "Classes/**/*.h"

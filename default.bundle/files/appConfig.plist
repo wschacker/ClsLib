@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iconUrl</key>
+	<string>http://app1.demo.com:8081/ServerTest/default/image/timeline_pressed@2x.png</string>
+	<key>message</key>
+	<string>青岛APPは素晴らしいアプリだよね</string>
+	<key>desc</key>
+	<string>青岛APP was a wonderful app</string>
+	<key>appName</key>
+	<string>青岛APP</string>
+</dict>
+</plist>
