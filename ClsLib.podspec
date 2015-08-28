@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
     baseClass.source_files = 'Util/BaseClass/*.{h,m}'
     end
     util.subspec 'ResourceManager' do |resourceManager|
-    baseClass.source_files = 'Util/ResourceManager/*.{h,m}'
+    resourceManager.source_files = 'Util/ResourceManager/*.{h,m}'
     end    
   end
 
