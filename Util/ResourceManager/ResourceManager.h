@@ -45,4 +45,8 @@ CG_INLINE NSDictionary *PropertyList(NSString *strPath){
 +(BOOL)resolveDirectoryAtPath:(NSString *)dirPath;
 +(BOOL)isExist:(NSString *)filePath;
 
++(NSString *)filePathWithName:(NSString *)strFileName;
++(BOOL)createPlistFile:(NSString *)strFileName;
++(NSDictionary *)dicFromPlist:(NSString *)strFileName;
++(NSArray *)arrFromPlist:(NSString *)strFileName;
 @end
