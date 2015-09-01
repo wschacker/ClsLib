@@ -108,7 +108,11 @@ Pod::Spec.new do |s|
     end
     util.subspec 'AppDefine' do |appDefine|
     appDefine.source_files = 'Util/AppDefine/*.{h,m}'
-end
+    end
+    util.subspec 'WebView' do |webView|
+    webView.source_files = 'Util/WebView/**/*.{h,,txt,m}'
+    webView.resources    = 'Util/WebView/UIWebLoaderView.bundle'
+    end
   end
 
   # s.public_header_files = "Classes/**/*.h"
