@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A700E8C91B93DC3600A4F75E /* AppConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C51B93DC3600A4F75E /* AppConstants.h */; };
+		A700E8CA1B93DC3600A4F75E /* MacroDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C61B93DC3600A4F75E /* MacroDefine.h */; };
+		A700E8CB1B93DC3600A4F75E /* NSUserDefaults+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */; };
+		A700E8CC1B93DC3600A4F75E /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */; };
+		A700E8CE1B93DDA000A4F75E /* ClsLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A700E8CD1B93DDA000A4F75E /* ClsLib.podspec */; };
 		A753B2441B8C103B001EBA5E /* ClsLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A753B2431B8C103B001EBA5E /* ClsLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A753B24A1B8C103C001EBA5E /* ClsLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A753B23E1B8C103B001EBA5E /* ClsLib.framework */; };
 		A753B2511B8C103C001EBA5E /* ClsLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A753B2501B8C103C001EBA5E /* ClsLibTests.m */; };
@@ -104,6 +109,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A700E8C51B93DC3600A4F75E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = Util/AppDefine/AppConstants.h; sourceTree = "<group>"; };
+		A700E8C61B93DC3600A4F75E /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroDefine.h; path = Util/AppDefine/MacroDefine.h; sourceTree = "<group>"; };
+		A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+Addition.h"; path = "Util/AppDefine/NSUserDefaults+Addition.h"; sourceTree = "<group>"; };
+		A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Addition.m"; path = "Util/AppDefine/NSUserDefaults+Addition.m"; sourceTree = "<group>"; };
+		A700E8CD1B93DDA000A4F75E /* ClsLib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClsLib.podspec; sourceTree = "<group>"; };
 		A753B23E1B8C103B001EBA5E /* ClsLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClsLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A753B2421B8C103B001EBA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A753B2431B8C103B001EBA5E /* ClsLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClsLib.h; sourceTree = "<group>"; };
@@ -213,9 +223,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A700E8C41B93DC2300A4F75E /* AppDefine */ = {
+			isa = PBXGroup;
+			children = (
+				A700E8C51B93DC3600A4F75E /* AppConstants.h */,
+				A700E8C61B93DC3600A4F75E /* MacroDefine.h */,
+				A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */,
+				A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */,
+			);
+			name = AppDefine;
+			sourceTree = "<group>";
+		};
 		A753B2341B8C103B001EBA5E = {
 			isa = PBXGroup;
 			children = (
+				A700E8CD1B93DDA000A4F75E /* ClsLib.podspec */,
 				A7EF88951B8EEB6D00909D18 /* default.bundle */,
 				A7EF88871B8EE1D800909D18 /* Foundation.framework */,
 				A753B2E51B8C1D18001EBA5E /* Util */,
@@ -336,6 +358,7 @@
 		A753B2E51B8C1D18001EBA5E /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A700E8C41B93DC2300A4F75E /* AppDefine */,
 				A7EF88821B8EE06400909D18 /* ResourceManager */,
 				A753B2F51B8C285C001EBA5E /* HttpUtil */,
 				A753B2E61B8C1D7B001EBA5E /* BaseClass */,
@@ -421,6 +444,7 @@
 				A753B3581B8C353C001EBA5E /* UIDevice+IdentifierAddition.h in Headers */,
 				A753B35C1B8C353C001EBA5E /* UILabel+AgileCreate.h in Headers */,
 				A753B3681B8C353C001EBA5E /* UIView+Animation.h in Headers */,
+				A700E8CA1B93DC3600A4F75E /* MacroDefine.h in Headers */,
 				A753B34C1B8C353C001EBA5E /* NSString+Regular.h in Headers */,
 				A753B3421B8C353C001EBA5E /* NSDate+Addition.h in Headers */,
 				A753B35E1B8C353C001EBA5E /* UINavigationController+Retro.h in Headers */,
@@ -439,7 +463,9 @@
 				A753B3AB1B8C556F001EBA5E /* AFURLResponseSerialization.h in Headers */,
 				A753B3541B8C353C001EBA5E /* UIColor+Addition.h in Headers */,
 				A753B3061B8C3525001EBA5E /* BaseService.h in Headers */,
+				A700E8C91B93DC3600A4F75E /* AppConstants.h in Headers */,
 				A753B3401B8C353C001EBA5E /* NSData+Addition.h in Headers */,
+				A700E8CB1B93DC3600A4F75E /* NSUserDefaults+Addition.h in Headers */,
 				A753B30A1B8C3525001EBA5E /* BaseViewController.h in Headers */,
 				A753B3621B8C353C001EBA5E /* UITextField+Addition.h in Headers */,
 				A753B3AD1B8C556F001EBA5E /* AFURLSessionManager.h in Headers */,
@@ -534,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EF88961B8EEB6D00909D18 /* default.bundle in Resources */,
+				A700E8CE1B93DDA000A4F75E /* ClsLib.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +602,7 @@
 				A753B34D1B8C353C001EBA5E /* NSString+Regular.m in Sources */,
 				A753B35F1B8C353C001EBA5E /* UINavigationController+Retro.m in Sources */,
 				A753B34F1B8C353C001EBA5E /* UIAlertView+Addition.m in Sources */,
+				A700E8CC1B93DC3600A4F75E /* NSUserDefaults+Addition.m in Sources */,
 				A753B3511B8C353C001EBA5E /* UIBezierPath+Symbol.m in Sources */,
 				A753B3A61B8C556F001EBA5E /* AFSecurityPolicy.m in Sources */,
 				A753B3651B8C353C001EBA5E /* UITextField+LimitLength.m in Sources */,
