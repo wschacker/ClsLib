@@ -16,13 +16,12 @@ NSString *const APPDefaultsKeyLoginID=@"loginid";
 NSString *const APPDefaultsKeyPassword = @"password";
 NSString *const APPDefaultsKeyUserInputName=@"userInputName";
 NSString *const APPDefaultsKeyURL=@"url";
-NSString *const APPMainCategoryVer=@"MainCategoryVer";
 
 NSString *const APPDefaultsKeyDeviceToken = @"divicetoken";
 NSString *const APPDefaultsKeyDataHolder = @"dataHolder";
-NSString *const APPDefaultsKeyPlatiUserId = @"PlatiUserId";
+NSString *const APPDefaultsKeyUserId = @"userId";
 
-NSString *const APPDefaultsKeyPlatIDToken=@"platIDToken";
+NSString *const APPDefaultsKeyToken=@"token";
 NSString *const APPDefaultsKeyIsHaveSound=@"isHaveSound";
 NSString *const APPDefaultsKeyEverLaunched=@"everLaunched";
 NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
@@ -47,14 +46,6 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
     [self setObject:loginid forKey:APPDefaultsKeyLoginID];
 }
 
-//-(LoginUser *)loginUser{
-//    return [self objectForKey:APPDefaultsKeyLoginUser];
-//}
-//
-//-(void)setLoginUser:(LoginUser *)loginUser{
-//    [self setObject:loginUser forKey:APPDefaultsKeyLoginUser];
-//}
-
 -(NSString *)loginid{
     return [self stringForKey:APPDefaultsKeyLoginID];
 }
@@ -66,12 +57,12 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
 - (void)setDivicetoken:(NSString *)divicetoken {
     [self setObject:divicetoken forKey:APPDefaultsKeyDeviceToken];
 }
-- (NSString *)platUserID {
-    return [self stringForKey:APPDefaultsKeyPlatiUserId];
+- (NSString *)userID {
+    return [self stringForKey:APPDefaultsKeyUserId];
 }
 
-- (void)setPlatUserID:(NSString *)platuserid {
-    [self setObject:platuserid forKey:APPDefaultsKeyPlatiUserId];
+- (void)setUserID:(NSString *)userid {
+    [self setObject:userid forKey:APPDefaultsKeyUserId];
 }
 
 - (NSDictionary*)dataHolder{
@@ -82,12 +73,12 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
     [self setObject:dataHolder forKey:APPDefaultsKeyDataHolder];
 }
 
-- (NSString *)platIDToken {
-    return [self stringForKey:APPDefaultsKeyPlatIDToken];
+- (NSString *)token {
+    return [self stringForKey:APPDefaultsKeyToken];
 }
 
-- (void)setPlatIDToken:(NSString *)platIDToken{
-    [self setObject:platIDToken forKey:APPDefaultsKeyPlatIDToken];
+- (void)setToken:(NSString *)token{
+    [self setObject:token forKey:APPDefaultsKeyToken];
 }
 
 - (BOOL)isHaveSound {
@@ -117,16 +108,9 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
 -(NSString *)userInputName{
     return [self stringForKey:APPDefaultsKeyUserInputName];
 }
+
 - (void)setUserInputName:(NSString *)userInputName{
     [self setObject:userInputName forKey:APPDefaultsKeyUserInputName];
-}
-
-
--(float)MainCategoryVer{
-    return [self floatForKey:APPMainCategoryVer];
-}
-- (void)setMainCategoryVer:(float)MainCategoryVer{
-    [self setFloat:MainCategoryVer forKey:APPMainCategoryVer];
 }
 
 -(LoginType)loginType{

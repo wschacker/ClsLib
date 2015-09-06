@@ -18,33 +18,32 @@ typedef NS_ENUM(NSInteger, LoginType) {
 @property (strong, getter=password,
            setter=setPassword:) NSString *password;
 
+@property(strong, getter=userID,
+          setter=setUserID:) NSString* userID;
 
-@property(strong, getter=platUserID,
-          setter=setPlatUserID:) NSString* platUserID;
 @property (strong, getter=divicetoken,
            setter=setDivicetoken:) NSString *divicetoken;
 
- @property (strong, getter=userName,
+@property (strong, getter=userName,
            setter=setUserName:) NSString *userName;
 
 @property (strong, getter=loginid,
            setter=setLoginID:)NSString *loginid;
 
-@property (strong, getter=platIDToken,
-           setter=setPlatIDToken:)NSString *PlatIDToken;
+@property (strong, getter=token,
+           setter=setToken:)NSString *token;
+
 @property (assign, getter=isHaveSound,
            setter=setIsHaveSound:)BOOL setIsHaveSound;
 
 @property (assign, getter=everLaunched,
            setter=setEverLaunched:)BOOL setEverLaunched;
+
 @property (assign, getter=firstLaunched,
            setter=setFirstLaunched:)BOOL setFirstLaunched;
 
 @property (strong, getter=userInputName,
            setter=setUserInputName:) NSString *userInputName;
-
-@property (assign, getter=MainCategoryVer,
-           setter=setMainCategoryVer:) float MainCategoryVer;
 
 @property (assign, getter=loginType,
            setter=setLoginType:) LoginType loginType;
@@ -59,9 +58,9 @@ inline NSString *  loginID()
 {
     return [UserDefaults() loginid];
 }
-inline NSString *  platUserID()
+inline NSString *  userID()
 {
-    return [UserDefaults() platUserID];
+    return [UserDefaults() userID];
 }
 
 inline NSString *  userName()
@@ -70,11 +69,11 @@ inline NSString *  userName()
 }
 inline NSString *  platIDToken()
 {
-    return [UserDefaults() platIDToken];
+    return [UserDefaults() token];
 }
 inline void setPlatIDToken(NSString *token)
 {
-    [UserDefaults() setPlatIDToken:token];
+    [UserDefaults() setToken:token];
 }
 inline BOOL isLogin()
 {
