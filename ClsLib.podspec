@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
     appDefine.source_files = 'Util/AppDefine/*.{h,m}'
     end
     util.subspec 'WebView' do |webView|
-    webView.source_files = 'Util/WebView/**/*.{h,,txt,m}'
+    webView.source_files = 'Util/WebView/**/*.{h,m}'
     webView.resources    = 'Util/WebView/UIWebLoaderView.bundle'
     end
   end
