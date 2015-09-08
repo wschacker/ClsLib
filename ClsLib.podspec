@@ -113,6 +113,9 @@ Pod::Spec.new do |s|
     webView.source_files = 'Util/WebView/**/*.{h,m}'
     webView.resources    = 'Util/WebView/UIWebLoaderView.bundle'
     end
+    util.subspec 'ResizeCell' do |ResizeCell|
+    ResizeCell.source_files = 'Util/ResizeCell/**/*.{h,m}'
+    end
   end
 
   # s.public_header_files = "Classes/**/*.h"
