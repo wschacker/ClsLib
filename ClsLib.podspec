@@ -113,8 +113,8 @@ Pod::Spec.new do |s|
     webView.source_files = 'Util/WebView/**/*.{h,m}'
     webView.resources    = 'Util/WebView/UIWebLoaderView.bundle'
     end
-    util.subspec 'ResizeCell' do |ResizeCell|
-    ResizeCell.source_files = 'Util/ResizeCell/**/*.{h,m}'
+    util.subspec 'ResizeCell' do |resizeCell|
+    resizeCell.source_files = 'Util/ResizeCell/**/*.{h,m}'
     end
   end
 
