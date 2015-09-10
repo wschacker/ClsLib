@@ -42,11 +42,11 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
     [self setObject:password forKey:APPDefaultsKeyPassword];
 }
 
--(void)setLoginID:(NSString *)loginid{
+-(void)setLoginId:(NSString *)loginid{
     [self setObject:loginid forKey:APPDefaultsKeyLoginID];
 }
 
--(NSString *)loginid{
+-(NSString *)loginId{
     return [self stringForKey:APPDefaultsKeyLoginID];
 }
 
@@ -120,4 +120,18 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
 -(void)setLoginType:(LoginType)loginType{
     [self setInteger:loginType forKey:@"loginType"];
 }
+
+-(NSString *)appId{
+    return [self stringForKey:@"AppId"];
+}
+-(void)setAppId:(NSString *)appId{
+    [self setObject:appId forKey:@"AppId"];
+}
+-(NSString *)cityId{
+    return [self stringForKey:@"CityId"];
+}
+-(void)setCityId:(NSString *)cityId{
+    [self setObject:cityId forKey:@"CityId"];
+}
+
 @end

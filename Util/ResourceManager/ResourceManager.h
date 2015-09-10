@@ -28,6 +28,18 @@ CG_INLINE NSDictionary *PropertyList(NSString *strPath){
     return dictionary;
 }
 
+CG_INLINE NSArray *PropertyArrayList(NSString *strPath){
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
+    
+    // Obtain a reference to a loadable bundle.
+    
+    NSString *resultPath = [myBundle pathForResource:strPath ofType:nil];
+    
+    NSArray *arrResult =  [NSArray  arrayWithContentsOfFile:resultPath];
+    return arrResult;
+}
+
 @interface ResourceManager : NSObject
 
 +(NSString *)appDocumentsDirectory;

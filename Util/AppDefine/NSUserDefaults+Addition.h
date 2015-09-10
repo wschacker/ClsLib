@@ -15,38 +15,31 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 @interface NSUserDefaults (Addition)
 
-@property (strong, getter=password,
-           setter=setPassword:) NSString *password;
+@property (strong, nonatomic) NSString *password;
 
-@property(strong, getter=userID,
-          setter=setUserID:) NSString* userID;
+@property(strong, nonatomic) NSString* userID;
 
-@property (strong, getter=divicetoken,
-           setter=setDivicetoken:) NSString *divicetoken;
+@property (strong, nonatomic) NSString *divicetoken;
 
-@property (strong, getter=userName,
-           setter=setUserName:) NSString *userName;
+@property (strong, nonatomic) NSString *userName;
 
-@property (strong, getter=loginid,
-           setter=setLoginID:)NSString *loginid;
+@property (strong, nonatomic)NSString *loginId;
 
-@property (strong, getter=token,
-           setter=setToken:)NSString *token;
+@property (strong, nonatomic)NSString *token;
 
-@property (assign, getter=isHaveSound,
-           setter=setIsHaveSound:)BOOL setIsHaveSound;
+@property (assign, nonatomic)BOOL isHaveSound;
 
-@property (assign, getter=everLaunched,
-           setter=setEverLaunched:)BOOL setEverLaunched;
+@property (assign, nonatomic)BOOL everLaunched;
 
-@property (assign, getter=firstLaunched,
-           setter=setFirstLaunched:)BOOL setFirstLaunched;
+@property (assign, nonatomic)BOOL firstLaunched;
 
-@property (strong, getter=userInputName,
-           setter=setUserInputName:) NSString *userInputName;
+@property (strong, nonatomic) NSString *userInputName;
 
-@property (assign, getter=loginType,
-           setter=setLoginType:) LoginType loginType;
+@property (assign, nonatomic) LoginType loginType;
+
+@property (strong, nonatomic) NSString *appId;
+
+@property (strong, nonatomic) NSString *cityId;
 
 @end
 inline NSUserDefaults *  UserDefaults()
@@ -56,7 +49,7 @@ inline NSUserDefaults *  UserDefaults()
 
 inline NSString *  loginID()
 {
-    return [UserDefaults() loginid];
+    return [UserDefaults() loginId];
 }
 inline NSString *  userID()
 {
@@ -67,11 +60,11 @@ inline NSString *  userName()
 {
     return [UserDefaults() userInputName];
 }
-inline NSString *  platIDToken()
+inline NSString *  token()
 {
     return [UserDefaults() token];
 }
-inline void setPlatIDToken(NSString *token)
+inline void setToken(NSString *token)
 {
     [UserDefaults() setToken:token];
 }
