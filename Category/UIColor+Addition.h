@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define DEFAULT_VOID_COLOR [UIColor whiteColor]
 
 @interface UIColor (Addition)
 
