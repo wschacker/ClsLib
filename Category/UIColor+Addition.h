@@ -32,5 +32,5 @@
  */
 + (UIColor *)convertHexColorToUIColor:(NSInteger)hexColor;
 
-
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 @end
