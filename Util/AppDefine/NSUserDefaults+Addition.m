@@ -121,16 +121,10 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
     [self setInteger:loginType forKey:@"loginType"];
 }
 
--(NSString *)appId{
-    return [self stringForKey:@"AppId"];
-}
--(void)setAppId:(NSString *)appId{
-    [self setObject:appId forKey:@"AppId"];
-}
--(NSString *)cityId{
+-(NSString *)cityCd{
     return [self stringForKey:@"CityId"];
 }
--(void)setCityId:(NSString *)cityId{
+-(void)setCityCd:(NSString *)cityId{
     [self setObject:cityId forKey:@"CityId"];
 }
 

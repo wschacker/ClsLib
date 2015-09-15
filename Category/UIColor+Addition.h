@@ -2,12 +2,12 @@
 //  UIColor+WSK.h
 //  CTCockpit
 //
-//  Created by 何 振东 on 12-9-26.
+//  Created by 王江磊.
 //
 //
 
 #import <UIKit/UIKit.h>
-#define DEFAULT_VOID_COLOR [UIColor whiteColor]
+#define DEFAULT_VOID_COLOR [UIColor greenColor]
 
 @interface UIColor (Addition)
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A700E8C91B93DC3600A4F75E /* AppConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C51B93DC3600A4F75E /* AppConstants.h */; };
 		A700E8CA1B93DC3600A4F75E /* MacroDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C61B93DC3600A4F75E /* MacroDefine.h */; };
 		A700E8CB1B93DC3600A4F75E /* NSUserDefaults+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */; };
 		A700E8CC1B93DC3600A4F75E /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */; };
@@ -140,7 +139,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A700E8C51B93DC3600A4F75E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = Util/AppDefine/AppConstants.h; sourceTree = "<group>"; };
 		A700E8C61B93DC3600A4F75E /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroDefine.h; path = Util/AppDefine/MacroDefine.h; sourceTree = "<group>"; };
 		A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+Addition.h"; path = "Util/AppDefine/NSUserDefaults+Addition.h"; sourceTree = "<group>"; };
 		A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Addition.m"; path = "Util/AppDefine/NSUserDefaults+Addition.m"; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 		A700E8C41B93DC2300A4F75E /* AppDefine */ = {
 			isa = PBXGroup;
 			children = (
-				A700E8C51B93DC3600A4F75E /* AppConstants.h */,
 				A700E8C61B93DC3600A4F75E /* MacroDefine.h */,
 				A700E8C71B93DC3600A4F75E /* NSUserDefaults+Addition.h */,
 				A700E8C81B93DC3600A4F75E /* NSUserDefaults+Addition.m */,
@@ -607,7 +604,6 @@
 				A7F5C9AC1B9E886B00A72D52 /* NSArray+MASAdditions.h in Headers */,
 				A753B3541B8C353C001EBA5E /* UIColor+Addition.h in Headers */,
 				A753B3061B8C3525001EBA5E /* BaseService.h in Headers */,
-				A700E8C91B93DC3600A4F75E /* AppConstants.h in Headers */,
 				A753B3401B8C353C001EBA5E /* NSData+Addition.h in Headers */,
 				A7F5C9A21B9E886B00A72D52 /* MASConstraintMaker.h in Headers */,
 				A7F5C9A81B9E886B00A72D52 /* MASViewAttribute.h in Headers */,

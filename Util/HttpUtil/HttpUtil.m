@@ -47,7 +47,13 @@
 +(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        
+        
         NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:parmDic];
 
         [manager POST:strUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {

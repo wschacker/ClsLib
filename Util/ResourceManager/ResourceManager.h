@@ -13,11 +13,11 @@
 #define UserId @"testUserId"
 
 
-CG_INLINE UIImage * UIResourceBundleImage(NSString *strPath){
+NS_INLINE UIImage * UIResourceBundleImage(NSString *strPath){
     return [UIImage imageNamed:[NSString stringWithFormat:@"default.bundle/image/%@.png",strPath]];
 }
 
-CG_INLINE NSDictionary *PropertyList(NSString *strPath){
+NS_INLINE NSDictionary *PropertyList(NSString *strPath){
     NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
     NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
     
@@ -28,14 +28,14 @@ CG_INLINE NSDictionary *PropertyList(NSString *strPath){
     return dictionary;
 }
 
-CG_INLINE NSArray *PropertyArrayList(NSString *strPath){
+NS_INLINE NSArray *PropertyArrayList(NSString *strPath){
     NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
     NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
     
     // Obtain a reference to a loadable bundle.
     
     NSString *resultPath = [myBundle pathForResource:strPath ofType:nil];
-    
+ 
     NSArray *arrResult =  [NSArray  arrayWithContentsOfFile:resultPath];
     return arrResult;
 }

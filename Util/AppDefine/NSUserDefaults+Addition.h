@@ -37,43 +37,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 @property (assign, nonatomic) LoginType loginType;
 
-@property (strong, nonatomic) NSString *appId;
+@property (strong, nonatomic) NSString *cityCd;
 
-@property (strong, nonatomic) NSString *cityId;
 
 @end
-inline NSUserDefaults *  UserDefaults()
-{
-    return [NSUserDefaults standardUserDefaults];
-}
-
-inline NSString *  loginID()
-{
-    return [UserDefaults() loginId];
-}
-inline NSString *  userID()
-{
-    return [UserDefaults() userID];
-}
-
-inline NSString *  userName()
-{
-    return [UserDefaults() userInputName];
-}
-inline NSString *  token()
-{
-    return [UserDefaults() token];
-}
-inline void setToken(NSString *token)
-{
-    [UserDefaults() setToken:token];
-}
-inline BOOL isLogin()
-{
-    
-    if ([UserDefaults() loginType] == App||[UserDefaults() loginType] == FB||[UserDefaults() loginType] == TW) {
-        return YES;
-    }else{
-        return NO;
-    }
-}
