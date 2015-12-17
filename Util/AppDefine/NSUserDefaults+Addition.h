@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 typedef NS_ENUM(NSInteger, LoginType) {
-    App = 100,
-    FB,
-    TW
+    LOGINTYPE_EMAIL,
+    LOGINTYPE_PHONE,
+    LOGINTYPE_PHONE_ET,
 };
 
 @interface NSUserDefaults (Addition)
