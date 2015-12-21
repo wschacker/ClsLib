@@ -127,5 +127,11 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
 -(void)setCityCd:(NSString *)cityId{
     [self setObject:cityId forKey:@"CityId"];
 }
+-(NSString *)cCode{
+    return [self stringForKey:@"cCode"];
+}
+-(void)setCCode:(NSString *)cCode{
+    [self setObject:cCode forKey:@"cCode"];
+}
 
 @end
