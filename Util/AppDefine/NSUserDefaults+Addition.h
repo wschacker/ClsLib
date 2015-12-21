@@ -39,5 +39,6 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 @property (strong, nonatomic) NSString *cityCd;
 
+@property (strong, nonatomic) NSString *cCode;
 
 @end
