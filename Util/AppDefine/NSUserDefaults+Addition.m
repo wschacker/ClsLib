@@ -133,5 +133,10 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
 -(void)setCCode:(NSString *)cCode{
     [self setObject:cCode forKey:@"cCode"];
 }
-
+-(NSString *)email{
+    return [self stringForKey:@"email"];
+}
+-(void)setEmail:(NSString *)email{
+    [self setObject:email forKey:@"email"];
+}
 @end
