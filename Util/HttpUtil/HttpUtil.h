@@ -12,7 +12,7 @@
 
 typedef void(^okBlock_t)(NSDictionary * dict);
 typedef void(^okArrBlock_t)(NSArray * arr);
-typedef void(^ngBlock_t)(NSString * error);
+typedef void(^ngBlock_t)(NSError * error);
 
 @interface HttpUtil : NSObject
 +(void)requestHtmlUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
