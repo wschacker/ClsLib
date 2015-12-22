@@ -23,8 +23,7 @@
         NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
         NSLog(@"Error: %@", error);
         NSLog(@"Error: %@", newStr);
-        NSString *str = [NSString stringWithFormat:@"%@",error];
-        ngBlock(str);
+        ngBlock(error);
     }];
 }
 
@@ -39,8 +38,7 @@
         NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
         NSLog(@"Error: %@", error);
         NSLog(@"Error: %@", newStr);
-        NSString *str = [NSString stringWithFormat:@"%@",error];
-        ngBlock(str);
+        ngBlock(error);
     }];
 }
 
@@ -63,8 +61,7 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
             NSLog(@"Error: %@", newStr);
-            NSString *str = [NSString stringWithFormat:@"%@",error];
-            ngBlock(str);
+            ngBlock(error);
         }];
     });
 }
@@ -80,8 +77,7 @@
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-        NSString *str = [NSString stringWithFormat:@"%@",error];
-        ngBlock(str);
+        ngBlock(error);
     }];
 }
 +(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic imageKey:(NSString *)key image:(UIImage *)img okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
@@ -98,8 +94,7 @@
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-        NSString *str = [NSString stringWithFormat:@"%@",error];
-        ngBlock(str);
+        ngBlock(error);
     }];
 }
 
