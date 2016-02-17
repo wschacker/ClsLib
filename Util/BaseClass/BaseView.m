@@ -25,10 +25,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-
-        [self initService];
         [self initViews];
-
+        [self initService];
     }
     return self;
 }
