@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 @property(strong, nonatomic) NSString* userID;
 
-@property (strong, nonatomic) NSString *divicetoken;
+@property (strong, nonatomic) NSString *devicetoken;
 
 @property (strong, nonatomic) NSString *userName;
 
