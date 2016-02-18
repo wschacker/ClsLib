@@ -50,11 +50,11 @@ NSString *const APPDefaultsKeyFirstLaunched=@"firstLaunched";
     return [self stringForKey:APPDefaultsKeyLoginID];
 }
 
-- (NSString *)divicetoken {
+- (NSString *)devicetoken {
     return [self stringForKey:APPDefaultsKeyDeviceToken];
 }
 
-- (void)setDivicetoken:(NSString *)divicetoken {
+- (void)setDevicetoken:(NSString *)divicetoken {
     [self setObject:divicetoken forKey:APPDefaultsKeyDeviceToken];
 }
 - (NSString *)userID {
