@@ -45,7 +45,10 @@
 +(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        
+ 
+        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+        manager.requestSerializer.timeoutInterval = 5;
+        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -57,7 +60,7 @@
                 okBlock(responseObject);});
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
-            NSLog(@"Error: %@", newStr);
+            NSLog(@"Error: %@response:%@", error,newStr);
             ngBlock(error);
         }];
     });
