@@ -72,8 +72,8 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+    // [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    // [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 -(void)orientationDidChange:(BOOL)isOrientationIsLandscape{
