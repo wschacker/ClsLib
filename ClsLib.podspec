@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ClsLib"
   s.version      = "0.0.2"
-  s.summary      = "A short description of ClsLib"
+  s.summary      = "a base library for quick development"
 
   s.description  = <<-DESC
                    A longer description of ClsLib.podspec in Markdown format.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "http://EXAMPLE/ClsLib"
+  s.homepage     = "https://github.com/w747351274/ClsLib/"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "wangjl" => "wangjl@golden-tech.com.cn" }
+  s.author             = { "wangjl" => "jianglei.wang@quanshi.com" }
   # Or just: s.author    = "wangjl"
   # s.authors            = { "wangjl" => "wangjl@golden-tech.com.cn" }
   # s.social_media_url   = "http://twitter.com/wangjl"
