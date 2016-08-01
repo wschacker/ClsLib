@@ -40,6 +40,16 @@ NS_INLINE NSArray *PropertyArrayList(NSString *strPath){
     return arrResult;
 }
 
+NS_INLINE NSData *UIResourceBundleFile(NSString *strPath){
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
+    
+    // Obtain a reference to a loadable bundle.
+    
+    NSString *resultPath = [myBundle pathForResource:strPath ofType:nil];
+    NSData *data = [NSData dataWithContentsOfFile:resultPath];
+    return data;
+}
 @interface ResourceManager : NSObject
 
 +(NSString *)appDocumentsDirectory;
