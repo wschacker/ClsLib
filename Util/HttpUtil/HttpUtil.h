@@ -14,10 +14,18 @@ typedef void(^okBlock_t)(NSDictionary * dict);
 typedef void(^okArrBlock_t)(NSArray * arr);
 typedef void(^ngBlock_t)(NSError * error);
 
-@interface HttpUtil : NSObject
-+(void)requestHtmlUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
-+(void)requestUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic file:(NSString *)filePath okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic imageKey:(NSString *)key image:(UIImage *)img okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+@interface HttpUtil : NSObject{
+    
+}
++(instancetype)sharedHttpUtil;
+-(void)cancel;
+-(void)requestHtmlUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+-(void)requestUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic file:(NSString *)filePath okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic imageKey:(NSString *)key image:(UIImage *)img okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock;
+
 @end
+NS_INLINE HttpUtil * baseHttpUtil(){
+    return [HttpUtil sharedHttpUtil];
+}
