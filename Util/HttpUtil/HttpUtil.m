@@ -9,15 +9,45 @@
 #import "HttpUtil.h"
 #import "AFNetworking.h"
 
+@interface HttpUtil(){
+    AFHTTPRequestOperationManager *manager;
+}
+
+@end
+
 @implementation HttpUtil
 
-+(void)requestHtmlUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setTimeoutInterval:5];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
++(instancetype)sharedHttpUtil{
     
-    [manager GET:strUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    static HttpUtil *sharedHttpUtil = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedHttpUtil = [[self alloc] init];
+    });
+    return sharedHttpUtil;
+}
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup {
+    manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 5;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+}
+-(void)cancel{
+    [manager.operationQueue cancelAllOperations];
+}
+-(void)requestHtmlUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
+     [manager GET:strUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
@@ -28,29 +58,16 @@
 }
 
 
-+(void)requestUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setTimeoutInterval:5];
-    
+-(void)requestUrl:(NSString *)strUrl okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     [manager GET:strUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
-        NSLog(@"Error: %@", error);
-        NSLog(@"Error: %@", newStr);
         ngBlock(error);
     }];
 }
 
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
- 
-        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-        manager.requestSerializer.timeoutInterval = 5;
-        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
         NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:parmDic];
 
@@ -59,15 +76,12 @@
                 
                 okBlock(responseObject);});
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
-            NSLog(@"Error: %@response:%@", error,newStr);
             ngBlock(error);
         }];
     });
 }
 
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic file:(NSString *)filePath okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic file:(NSString *)filePath okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     NSDictionary *parameters = parmDic;
     NSURL *path = [NSURL fileURLWithPath:filePath];
     [manager POST:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -76,12 +90,11 @@
 
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         ngBlock(error);
     }];
 }
-+(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic imageKey:(NSString *)key image:(UIImage *)img okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+-(void)postRequestUrl:(NSString *)strUrl para:(NSDictionary *)parmDic imageKey:(NSString *)key image:(UIImage *)img okBlock:(okBlock_t)okBlock ngBlock:(ngBlock_t)ngBlock{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:parmDic];
     NSData* imgData = UIImagePNGRepresentation(img);
     [manager POST:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -93,7 +106,6 @@
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         okBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         ngBlock(error);
     }];
 }
